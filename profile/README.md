@@ -33,11 +33,18 @@ Federated forums on the AT Protocol. Self-hostable. One account works across eve
 
 ![Sifa](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-sifa.svg)
 
-Professional identity and reputation on the AT Protocol. Your contributions across AT Protocol apps build a portable reputation that follows you everywhere.
+Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the decentralized web.
 
-**Status:** In development
+**Status:** Alpha (P1 MVP complete)
+**License:** Source-available (backend, frontend) + MIT (lexicons)
 
-[sifa.work](https://sifa.work)
+| Repository | Description |
+|------------|-------------|
+| [sifa-api](https://github.com/singi-labs/sifa-api) | AppView backend (Fastify, AT Protocol, Jetstream) |
+| [sifa-web](https://github.com/singi-labs/sifa-web) | Frontend (Next.js, React, TailwindCSS) |
+| [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) |
+
+[sifa.id](https://sifa.id)
 
 ---
 
@@ -52,7 +59,7 @@ Professional identity and reputation on the AT Protocol. Your contributions acro
 
 ## Tech stack
 
-TypeScript / Node.js 24 / Fastify / PostgreSQL 16 / Next.js / React 19 / TailwindCSS / AT Protocol
+TypeScript / Node.js 25 / Fastify 5 / PostgreSQL 17 / Next.js 15+ / React 19 / TailwindCSS / AT Protocol
 
 ---
 
@@ -73,7 +80,7 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 - [singi.dev](https://singi.dev) -- Organization homepage
 - [barazo.forum](https://barazo.forum) -- Barazo marketing site
 - [docs.barazo.forum](https://docs.barazo.forum) -- Barazo documentation
-- [sifa.work](https://sifa.work) -- Sifa (coming soon)
+- [sifa.id](https://sifa.id) -- Sifa professional network
 - [GitHub Discussions](https://github.com/orgs/singi-labs/discussions)
 - [Bluesky](https://bsky.app/profile/barazo.forum) -- @barazo.forum
 
