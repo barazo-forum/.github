@@ -82,8 +82,7 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 - [barazo.forum](https://barazo.forum) -- Barazo marketing site
 - [docs.barazo.forum](https://docs.barazo.forum) -- Barazo documentation
 - [sifa.id](https://sifa.id) -- Sifa professional network
-- [GitHub Discussions](https://github.com/orgs/singi-labs/discussions)
-- [Bluesky](https://bsky.app/profile/barazo.forum) -- @barazo.forum
+- 🦋 [Bluesky](https://bsky.app/profile/singi.dev) -- @singi.dev
 
 ---
 
