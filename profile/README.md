@@ -4,7 +4,7 @@
 
 We build open source software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no surveillance.
 
-Built with 🧡 in 🇪🇺.
+Built with care in the EU.
 
 [![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=total%20org%20stars)](https://github.com/singi-labs)
 [![Website](https://img.shields.io/badge/singi.dev-website-DA702C)](https://singi.dev)
@@ -20,14 +20,14 @@ Federated forums on the AT Protocol. Self-hostable. One account works across eve
 **Status:** Alpha (Phase 2 complete)
 **License:** AGPL-3.0 (backend) + MIT (frontend, lexicons, deploy)
 
-| Repository | Description |
-|------------|-------------|
-| [barazo-api](https://github.com/singi-labs/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) |
-| [barazo-web](https://github.com/singi-labs/barazo-web) | Forum frontend (Next.js, React, TailwindCSS) |
-| [barazo-lexicons](https://github.com/singi-labs/barazo-lexicons) | AT Protocol schema definitions |
-| [barazo-deploy](https://github.com/singi-labs/barazo-deploy) | Docker Compose templates for self-hosting |
-| [barazo-website](https://github.com/singi-labs/barazo-website) | Marketing site |
-| [barazo-docs](https://github.com/singi-labs/barazo-docs) | Documentation site |
+| Repository | Description | CI | Updated |
+|------------|-------------|----|---------|
+| [barazo-api](https://github.com/singi-labs/barazo-api) | AppView backend (Fastify, PostgreSQL, AT Protocol) | [![CI](https://github.com/singi-labs/barazo-api/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/barazo-api/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-api?label=updated) |
+| [barazo-web](https://github.com/singi-labs/barazo-web) | Forum frontend (Next.js, React, TailwindCSS) | [![CI](https://github.com/singi-labs/barazo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/barazo-web/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-web?label=updated) |
+| [barazo-lexicons](https://github.com/singi-labs/barazo-lexicons) | AT Protocol schema definitions | [![CI](https://github.com/singi-labs/barazo-lexicons/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/barazo-lexicons/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-lexicons?label=updated) |
+| [barazo-deploy](https://github.com/singi-labs/barazo-deploy) | Docker Compose templates for self-hosting | [![Validate](https://github.com/singi-labs/barazo-deploy/actions/workflows/validate-compose.yml/badge.svg)](https://github.com/singi-labs/barazo-deploy/actions/workflows/validate-compose.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-deploy?label=updated) |
+| [barazo-docs](https://github.com/singi-labs/barazo-docs) | Documentation site (Fumadocs) | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-docs?label=updated) |
+| [barazo-website](https://github.com/singi-labs/barazo-website) | Marketing site | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-website?label=updated) |
 
 [barazo.forum](https://barazo.forum) | [Documentation](https://docs.barazo.forum)
 
@@ -38,11 +38,12 @@ Professional identity and career network on the AT Protocol. Portable profiles, 
 **Status:** Alpha (P1 MVP complete)
 **License:** Source-available (backend, frontend) + MIT (lexicons)
 
-| Repository | Description |
-|------------|-------------|
-| [sifa-api](https://github.com/singi-labs/sifa-api) | AppView backend (Fastify, AT Protocol, Jetstream) |
-| [sifa-web](https://github.com/singi-labs/sifa-web) | Frontend (Next.js, React, TailwindCSS) |
-| [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) |
+| Repository | Description | CI | Updated |
+|------------|-------------|----|---------|
+| [sifa-api](https://github.com/singi-labs/sifa-api) | AppView backend (Fastify, AT Protocol, Jetstream) | [![CI](https://github.com/singi-labs/sifa-api/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-api/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-api?label=updated) |
+| [sifa-web](https://github.com/singi-labs/sifa-web) | Frontend (Next.js, React, TailwindCSS) | [![CI](https://github.com/singi-labs/sifa-web/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-web/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-web?label=updated) |
+| [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) | [![Validate](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml/badge.svg)](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-lexicons?label=updated) |
+| [sifa-deploy](https://github.com/singi-labs/sifa-deploy) | Docker Compose + Caddy deployment config | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-deploy?label=updated) |
 
 [sifa.id](https://sifa.id)
 
@@ -59,7 +60,7 @@ Professional identity and career network on the AT Protocol. Portable profiles, 
 
 ## Tech stack
 
-TypeScript / Node.js 25 / Fastify 5 / PostgreSQL 17 / Next.js 15+ / React 19 / TailwindCSS / AT Protocol
+TypeScript / Node.js 25 / Fastify 5 / PostgreSQL 17 / Next.js 16 / React 19 / TailwindCSS / AT Protocol
 
 ---
 
