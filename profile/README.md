@@ -1,8 +1,8 @@
 ![Singi Labs](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-singi.svg)
 
-**Open community infrastructure for the decentralized web.**
+**Open source foundations for networked apps.**
 
-We build open source software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no surveillance.
+We build decentralized software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no ads.
 
 Made with ♥ in 🇪🇺.
 
@@ -53,8 +53,8 @@ Professional identity and career network on the AT Protocol. Portable profiles, 
 
 - **Portable identity** -- One account, everywhere
 - **User-owned data** -- Your content lives on your PDS
-- **Open source** -- Inspect, modify, self-host
-- **No surveillance** -- No ads, no tracking, ever
+- **Transparent by design** -- Open protocol, open code
+- **No ads, ever** -- Your attention isn't the product
 
 ---
 
@@ -87,4 +87,4 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 
 ---
 
-**Singi Labs** -- from Swahili *msingi* (foundation). **Barazo** from *baraza* (community council). **Sifa** from *sifa* (praise, reputation).
+Made with ♥ in 🇪🇺
