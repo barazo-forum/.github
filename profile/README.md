@@ -60,7 +60,7 @@ Professional identity and career network on the AT Protocol. Portable profiles, 
 
 ## Tech stack
 
-TypeScript / Node.js 25 / Fastify 5 / PostgreSQL 17 / Next.js 16 / React 19 / TailwindCSS / AT Protocol
+TypeScript / Node.js / Fastify / PostgreSQL / Next.js / React / TailwindCSS / AT Protocol
 
 ---
 
