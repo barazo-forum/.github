@@ -4,7 +4,7 @@
 
 We build open source software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no surveillance.
 
-Built with care in the EU.
+Made with ♥ in 🇪🇺.
 
 [![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=total%20org%20stars)](https://github.com/singi-labs)
 [![Website](https://img.shields.io/badge/singi.dev-website-DA702C)](https://singi.dev)
