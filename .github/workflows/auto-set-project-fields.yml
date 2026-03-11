@@ -108,7 +108,7 @@ jobs:
           ' -f projectId="PVT_kwDOD4Vljc4BPpMY" \
             -f itemId="${{ steps.find-item.outputs.item_id }}" \
             -f fieldId="PVTSSF_lADOD4Vljc4BPpMYzg9_mGI" \
-            -f optionId="23ec1329"
+            -f optionId="06fff707"
 
           echo "Set Status to: Backlog"
         env:
