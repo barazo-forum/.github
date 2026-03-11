@@ -1,0 +1,115 @@
+name: Auto-set project board fields
+
+on:
+  issues:
+    types: [opened, transferred]
+
+jobs:
+  set-project-fields:
+    runs-on: ubuntu-latest
+    # Skip bot-created issues (Dependabot, GitHub Actions, etc.)
+    if: github.actor != 'dependabot[bot]' && github.actor != 'github-actions[bot]'
+    steps:
+      # Wait for auto-add workflow to add the issue to the project board
+      - name: Wait for issue to be added to project
+        run: sleep 15
+
+      - name: Determine Product option
+        id: product
+        run: |
+          REPO="${{ github.repository }}"
+          REPO_NAME="${REPO#*/}"
+
+          if [[ "$REPO_NAME" == sifa-* ]]; then
+            echo "option_id=39a985a7" >> "$GITHUB_OUTPUT"
+            echo "label=Sifa" >> "$GITHUB_OUTPUT"
+          elif [[ "$REPO_NAME" == barazo-* ]]; then
+            echo "option_id=d607c78f" >> "$GITHUB_OUTPUT"
+            echo "label=Barazo" >> "$GITHUB_OUTPUT"
+          elif [[ "$REPO_NAME" == ".github" || "$REPO_NAME" == ".internal" ]]; then
+            echo "option_id=a3feb79b" >> "$GITHUB_OUTPUT"
+            echo "label=Singi Labs" >> "$GITHUB_OUTPUT"
+          else
+            echo "option_id=a3feb79b" >> "$GITHUB_OUTPUT"
+            echo "label=Singi Labs (fallback)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Find project item ID
+        id: find-item
+        run: |
+          REPO="${{ github.repository }}"
+          REPO_NAME="${REPO#*/}"
+          REPO_OWNER="${REPO%%/*}"
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+
+          ITEM_ID=$(gh api graphql -f query='
+            query($owner: String!, $name: String!, $number: Int!) {
+              repository(owner: $owner, name: $name) {
+                issue(number: $number) {
+                  projectItems(first: 10) {
+                    nodes {
+                      id
+                      project {
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ' -f owner="$REPO_OWNER" -f name="$REPO_NAME" -F number="$ISSUE_NUMBER" \
+            --jq '.data.repository.issue.projectItems.nodes[] | select(.project.id == "PVT_kwDOD4Vljc4BPpMY") | .id')
+
+          if [ -z "$ITEM_ID" ]; then
+            echo "::error::Issue not found on project board. The auto-add workflow may not have completed yet."
+            exit 1
+          fi
+
+          echo "item_id=$ITEM_ID" >> "$GITHUB_OUTPUT"
+          echo "Found project item: $ITEM_ID"
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_BOARD_TOKEN }}
+
+      - name: Set Product field
+        run: |
+          gh api graphql -f query='
+            mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
+              updateProjectV2ItemFieldValue(input: {
+                projectId: $projectId
+                itemId: $itemId
+                fieldId: $fieldId
+                value: { singleSelectOptionId: $optionId }
+              }) {
+                projectV2Item { id }
+              }
+            }
+          ' -f projectId="PVT_kwDOD4Vljc4BPpMY" \
+            -f itemId="${{ steps.find-item.outputs.item_id }}" \
+            -f fieldId="PVTSSF_lADOD4Vljc4BPpMYzg_GXpM" \
+            -f optionId="${{ steps.product.outputs.option_id }}"
+
+          echo "Set Product to: ${{ steps.product.outputs.label }}"
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_BOARD_TOKEN }}
+
+      - name: Set Status field to Backlog
+        run: |
+          gh api graphql -f query='
+            mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
+              updateProjectV2ItemFieldValue(input: {
+                projectId: $projectId
+                itemId: $itemId
+                fieldId: $fieldId
+                value: { singleSelectOptionId: $optionId }
+              }) {
+                projectV2Item { id }
+              }
+            }
+          ' -f projectId="PVT_kwDOD4Vljc4BPpMY" \
+            -f itemId="${{ steps.find-item.outputs.item_id }}" \
+            -f fieldId="PVTSSF_lADOD4Vljc4BPpMYzg9_mGI" \
+            -f optionId="06fff707"
+
+          echo "Set Status to: Backlog"
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_BOARD_TOKEN }}
