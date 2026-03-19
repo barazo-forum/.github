@@ -4,7 +4,7 @@
 
 We build decentralized software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no ads.
 
-Made with ♥ in 🇪🇺.
+Made with 🧡 in 🇪🇺.
 
 [![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=total%20org%20stars)](https://github.com/singi-labs)
 [![Website](https://img.shields.io/badge/singi.dev-website-DA702C)](https://singi.dev)
@@ -83,7 +83,3 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 - [docs.barazo.forum](https://docs.barazo.forum) -- Barazo documentation
 - [sifa.id](https://sifa.id) -- Sifa professional network
 - 🦋 [Bluesky](https://bsky.app/profile/singi.dev) -- @singi.dev
-
----
-
-Made with ♥ in 🇪🇺
