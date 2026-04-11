@@ -41,8 +41,6 @@ Professional identity and career network on the AT Protocol. Portable profiles, 
 
 | Repository | Description | CI | Updated |
 |------------|-------------|----|---------|
-| [sifa-api](https://github.com/singi-labs/sifa-api) | AppView backend (Fastify, AT Protocol, Jetstream) | [![CI](https://github.com/singi-labs/sifa-api/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-api/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-api?label=updated) |
-| [sifa-web](https://github.com/singi-labs/sifa-web) | Frontend (Next.js, React, TailwindCSS) | [![CI](https://github.com/singi-labs/sifa-web/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-web/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-web?label=updated) |
 | [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) | [![Validate](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml/badge.svg)](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-lexicons?label=updated) |
 
 [sifa.id](https://sifa.id)
