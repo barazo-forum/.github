@@ -37,7 +37,7 @@ Federated forums on the AT Protocol. Self-hostable. One account works across eve
 Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the decentralized web.
 
 **Status:** Alpha (P1 MVP complete)
-**License:** Source-available + MIT (lexicons)
+**License:** MIT (lexicons)
 
 | Repository | Description | CI | Updated |
 |------------|-------------|----|---------|
