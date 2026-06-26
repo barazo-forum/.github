@@ -50,7 +50,9 @@ cd <repo>
 2. Branch from `main`: `git checkout -b feat/short-description`.
 3. Build it **with tests**. Run the repo's test/lint/typecheck locally.
 4. Open a PR, link the issue (`Closes #NN`), fill the checklist.
-5. **Two things review your PR:**
+5. **Automated gates + human review on your PR:**
+   - a **secret scan** (gitleaks) blocks any committed secret — if a test fixture
+     trips it, allowlist the fake value in the repo's `.gitleaks.toml`;
    - an **automated AI reviewer** posts a comment and a **blocking `AI Review`
      check** — if it requests changes, address them and push (it re-runs);
    - a **maintainer** reviews and merges (squash).

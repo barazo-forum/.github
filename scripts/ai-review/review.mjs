@@ -40,7 +40,7 @@ const diff = truncated ? rawDiff.slice(0, MAX_DIFF) : rawDiff;
 
 const standards =
   env.STANDARDS_FILE && existsSync(env.STANDARDS_FILE)
-    ? readFileSync(env.STANDARDS_FILE, "utf8").slice(0, 8000)
+    ? readFileSync(env.STANDARDS_FILE, "utf8").slice(0, 16000)
     : "";
 const prTitle = env.PR_TITLE || "";
 const prBody = (env.PR_BODY || "").slice(0, 4000);
