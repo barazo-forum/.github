@@ -62,8 +62,10 @@ cd <repo>
 
 ## 5. Standards
 
-The full engineering standards are the source of truth (a maintainer will point
-you to them). The essentials the AI reviewer and maintainers enforce:
+How we engineer — the operating model, what the harness enforces, and what you
+inherit — is in [`engineering/harness.md`](engineering/harness.md). If you use a
+coding agent, drop [`engineering/agent-instructions.md`](engineering/agent-instructions.md)
+into your local clone. The essentials the AI reviewer and maintainers enforce:
 
 - **TypeScript strict** — no `any`, no `@ts-ignore`; `as` casts need a comment.
 - **Validate at every boundary** with Zod (inputs, env, AT Protocol records);
