@@ -9,6 +9,22 @@ nothing drifts.
 | [`harness.md`](harness.md) | How we engineer with AI agents — the operating model, what the harness enforces, what you inherit vs. what's maintainer-only. Read this first. |
 | [`agent-instructions.md`](agent-instructions.md) | Drop-in `CLAUDE.md` / `AGENTS.md` for your local clone so your coding agent stays in bounds. |
 | [`templates/pr-gates.yml`](templates/pr-gates.yml) | Caller workflow a repo adds to run the shared secret scan on every PR. |
+| [`standards/`](standards/) | The engineering standards the AI reviewer and maintainers enforce (see below). |
+
+### Standards
+
+The single source of truth for our engineering conventions — referenced by every
+repo's `AGENTS.md` rather than copied:
+
+| Doc | Scope |
+|---|---|
+| [`standards/shared.md`](standards/shared.md) | Cross-cutting: testing, CI/CD, git workflow, dependencies |
+| [`standards/backend.md`](standards/backend.md) | Backend patterns, API conventions, data, security |
+| [`standards/frontend.md`](standards/frontend.md) | Frontend patterns, accessibility, components |
+| [`standards/atproto-conventions.md`](standards/atproto-conventions.md) | AT Protocol conventions |
+| [`standards/naming-lexicon.md`](standards/naming-lexicon.md) | Lexicon naming rules |
+| [`standards/quality-measures.md`](standards/quality-measures.md) | Quality, security & reliability overview |
+| [`standards/readme-template.md`](standards/readme-template.md) | README template for repos |
 
 See also, at the org root: [`CONTRIBUTING.md`](../CONTRIBUTING.md) ·
 [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md) · [`CLA.md`](../CLA.md) ·
