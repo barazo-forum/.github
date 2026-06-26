@@ -81,6 +81,23 @@ jobs:
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
           echo "Scoped: profile=${{ inputs.profile }}, mode=$mode, diff lines=$lines"
 
+      - name: Assemble standards context
+        if: steps.scope.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          : > combined-standards.md
+          # Repo house rules (AGENTS.md preferred, else CLAUDE.md)
+          for f in AGENTS.md CLAUDE.md; do
+            if [ -f "$f" ]; then cat "$f" >> combined-standards.md; printf '\n\n' >> combined-standards.md; break; fi
+          done
+          # Canonical engineering standards for this profile (single source of truth in .github)
+          std=".singi-review/engineering/standards"
+          if [ "${{ inputs.profile }}" = "frontend" ]; then
+            [ -f "$std/frontend.md" ] && cat "$std/frontend.md" >> combined-standards.md || true
+          else
+            [ -f "$std/backend.md" ] && cat "$std/backend.md" >> combined-standards.md || true
+          fi
+
       - name: Run AI review
         if: steps.scope.outputs.skip != 'true'
         id: run
@@ -93,7 +110,7 @@ jobs:
           GENERAL_PROMPT: ${{ steps.prof.outputs.general }}
           ADVERSARIAL_PROMPT: ${{ steps.prof.outputs.adversarial }}
           DIFF_FILE: diff.patch
-          STANDARDS_FILE: CLAUDE.md
+          STANDARDS_FILE: combined-standards.md
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
         run: node .singi-review/scripts/ai-review/review.mjs > review.md
