@@ -1,0 +1,17 @@
+# Copy this to a repo as: .github/workflows/pr-gates.yml
+#
+# Runs the org's shared, deterministic guardrails on every PR. Today that is the
+# secret scan; add more shared jobs here as the org workflow grows. Defined once
+# in singi-labs/.github — update there and every repo referencing it follows.
+
+name: PR Gates
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  secret-scan:
+    uses: singi-labs/.github/.github/workflows/secret-scan.yml@main
