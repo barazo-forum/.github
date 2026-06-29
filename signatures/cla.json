@@ -1,3 +1,12 @@
 {
-  "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "StevenLangbroek",
+      "id": 296796,
+      "comment_id": 4829318148,
+      "created_at": "2026-06-29T05:39:31Z",
+      "repoId": 1176123808,
+      "pullRequestNo": 1372
+    }
+  ]
 }
