@@ -1,0 +1,43 @@
+name: Dependency Diff (reusable)
+
+# Org-wide reusable dependency-change reporter. Each repo calls this with a
+# short caller workflow; the pinned action + config live ONCE here in
+# singi-labs/.github.
+#
+# Posts a PR comment summarising dependency changes: trust-level shifts
+# (Trusted Publisher -> Provenance -> None), install/bundle size deltas,
+# dependency-count growth, duplicate versions, and e18e community replacement
+# suggestions. Advisory only -- posts a comment, sets no status, never blocks
+# merge. Supports npm (package-lock.json) and pnpm (pnpm-lock.yaml) repos.
+
+on:
+  workflow_call:
+    inputs:
+      dependency-threshold:
+        description: "Warn when added dependency count exceeds this"
+        type: number
+        default: 10
+      size-threshold:
+        description: "Warn when install size grows beyond this (bytes)"
+        type: number
+        default: 100000
+
+jobs:
+  dependency-diff:
+    if: ${{ github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out PR (full history for base comparison)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Dependency diff
+        uses: e18e/action-dependency-diff@8e9b8c1957ab066d36235a43f4c1ff1522e1bdbc # v1.6.1
+        with:
+          github-token: ${{ github.token }}
+          dependency-threshold: ${{ inputs.dependency-threshold }}
+          size-threshold: ${{ inputs.size-threshold }}
