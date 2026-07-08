@@ -73,7 +73,18 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Skipping: only trivial files changed"; exit 0
           fi
           echo "skip=false" >> "$GITHUB_OUTPUT"
-          gh pr diff "$PR" --patch > diff.patch
+          # Drop generated, high-volume files (lockfiles, snapshots) from the
+          # review diff. review.mjs caps the diff at MAX_DIFF_CHARS (120k); a
+          # single regenerated pnpm-lock.yaml or package-lock deletion is bigger
+          # than that on its own and would truncate the real code out of view
+          # (the reviewer then flags "no tests" for changes it never saw). The
+          # awk drops each `diff --git ... b/<path>` section whose path is a
+          # lockfile or snapshot; everything else (incl. .github/ and docs) is
+          # kept. A PR that changes ONLY trivial files is already skipped above.
+          gh pr diff "$PR" --patch | awk '
+            /^diff --git / { p = $0; sub(/^diff --git a\/.* b\//, "", p);
+              drop = (p ~ /(\.lock|lock\.json|lock\.ya?ml|\.snap)$/) }
+            !drop' > diff.patch
           lines=$(wc -l < diff.patch)
           mode=single
           printf '%s' "$LABELS" | grep -q 'deep-review' && mode=dual || true
