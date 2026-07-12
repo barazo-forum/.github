@@ -4,14 +4,27 @@
 
 We build in the open on [AT Protocol](https://atproto.com). Portable identity, user-owned data, no ads.
 
-Made with ♥ in 🇪🇺.
-
 [![GitHub Org Stars](https://img.shields.io/github/stars/singi-labs?style=flat&label=total%20org%20stars)](https://github.com/singi-labs)
 [![Website](https://img.shields.io/badge/singi.dev-website-DA702C)](https://singi.dev)
 
 ---
 
 ## Products
+
+![Sifa](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-sifa.svg)
+
+Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the open web.
+
+**Status:** Alpha (P1 MVP complete)
+**License:** MIT (SDK, lexicons)
+
+| Repository | Description | CI | Updated |
+|------------|-------------|----|---------|
+| [sifa-sdk](https://github.com/singi-labs/sifa-sdk) | Public TypeScript client for the Sifa AppView (on npm) | [![CI](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-sdk?label=updated) |
+| [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) | [![Validate](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml/badge.svg)](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-lexicons?label=updated) |
+| [sifa-docs](https://github.com/singi-labs/sifa-docs) | Documentation site (Fumadocs) | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-docs?label=updated) |
+
+[sifa.id](https://sifa.id) | [Documentation](https://docs.sifa.id)
 
 ![Barazo](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-barazo.svg)
 
@@ -31,21 +44,6 @@ Federated forums on the AT Protocol. Self-hostable. One account works across eve
 | [barazo-website](https://github.com/singi-labs/barazo-website) | Marketing site | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/barazo-website?label=updated) |
 
 [barazo.forum](https://barazo.forum) | [Documentation](https://docs.barazo.forum)
-
-![Sifa](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-sifa.svg)
-
-Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the open web.
-
-**Status:** Alpha (P1 MVP complete)
-**License:** MIT (SDK, lexicons)
-
-| Repository | Description | CI | Updated |
-|------------|-------------|----|---------|
-| [sifa-sdk](https://github.com/singi-labs/sifa-sdk) | Public TypeScript client for the Sifa AppView (on npm) | [![CI](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-sdk?label=updated) |
-| [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) | [![Validate](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml/badge.svg)](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-lexicons?label=updated) |
-| [sifa-docs](https://github.com/singi-labs/sifa-docs) | Documentation site (Fumadocs) | [![CI](https://github.com/singi-labs/sifa-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-docs/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-docs?label=updated) |
-
-[sifa.id](https://sifa.id) | [Documentation](https://docs.sifa.id)
 
 ---
 
@@ -81,9 +79,10 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 ## Links
 
 - [singi.dev](https://singi.dev) -- Organization homepage
+- [sifa.id](https://sifa.id) -- Sifa professional network
+- [docs.sifa.id](https://docs.sifa.id) -- Sifa documentation
 - [barazo.forum](https://barazo.forum) -- Barazo marketing site
 - [docs.barazo.forum](https://docs.barazo.forum) -- Barazo documentation
-- [sifa.id](https://sifa.id) -- Sifa professional network
 - 🦋 [Bluesky](https://bsky.app/profile/singi.dev) -- @singi.dev
 
 ---
