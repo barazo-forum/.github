@@ -21,39 +21,27 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const repos = ['barazo-api', 'barazo-web', 'barazo-lexicons', 'barazo-deploy', 'barazo-website'];
-            const seen = new Map();
+            // Curated contributor list. listContributors only counts public-repo
+            // commits, so it missed external contributors working on private Sifa
+            // repos. Fetch each user's current avatar by login instead. Add new
+            // contributors here.
+            const logins = ['gxjansen', 'StevenLangbroek', 'nmokkenstorm'];
+            const cells = [];
 
-            for (const repo of repos) {
+            for (const login of logins) {
               try {
-                const { data } = await github.rest.repos.listContributors({
-                  owner: 'singi-labs',
-                  repo,
-                  per_page: 100,
-                });
-                for (const c of data) {
-                  if (c.type !== 'User') continue;
-                  if (!seen.has(c.login)) {
-                    seen.set(c.login, { login: c.login, avatar: c.avatar_url, contributions: 0 });
-                  }
-                  seen.get(c.login).contributions += c.contributions;
-                }
+                const { data } = await github.rest.users.getByUsername({ username: login });
+                cells.push(
+                  `<a href="https://github.com/${data.login}"><img src="${data.avatar_url}&s=80" width="80" alt="@${data.login}" /></a>`
+                );
               } catch (e) {
-                console.log(`Skipping ${repo}: ${e.message}`);
+                console.log(`Skipping ${login}: ${e.message}`);
               }
             }
 
-            const contributors = [...seen.values()]
-              .sort((a, b) => b.contributions - a.contributions);
-
-            const cells = contributors.map(c =>
-              `<a href="https://github.com/${c.login}"><img src="${c.avatar}&s=80" width="80" alt="@${c.login}" /></a>`
-            );
-
             const fs = require('fs');
-            const md = cells.join('\n');
-            fs.writeFileSync('contributors-fragment.html', md);
-            console.log(`Generated ${contributors.length} contributors`);
+            fs.writeFileSync('contributors-fragment.html', cells.join('\n'));
+            console.log(`Generated ${cells.length} contributors`);
 
       - name: Update README
         run: |

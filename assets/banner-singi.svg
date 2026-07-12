@@ -55,7 +55,7 @@
             <text x="0" y="0" style="font-family:'Helvetica-Bold','Helvetica','Arial',sans-serif;font-weight:700;font-size:76px;fill:#FFFCF0;">Singi Labs</text>
         </g>
         <g transform="translate(80,195)">
-            <text x="0" y="0" style="font-family:'Helvetica','Arial',sans-serif;font-size:28px;fill:#FFFCF0;">Open community infrastructure for the decentralized web</text>
+            <text x="0" y="0" style="font-family:'Helvetica','Arial',sans-serif;font-size:28px;fill:#FFFCF0;">Open foundations for your online life.</text>
         </g>
         <rect x="80" y="210" width="140" height="2" style="fill:#DA702C;fill-opacity:0.6;"/>
     </g>

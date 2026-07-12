@@ -1,8 +1,8 @@
 ![Singi Labs](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-singi.svg)
 
-**Open source foundations for networked apps.**
+**Open source foundations for the parts of your online life you shouldn't have to rent.**
 
-We build decentralized software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no ads.
+We build in the open on [AT Protocol](https://atproto.com). Portable identity, user-owned data, no ads.
 
 Made with ♥ in 🇪🇺.
 
@@ -34,16 +34,18 @@ Federated forums on the AT Protocol. Self-hostable. One account works across eve
 
 ![Sifa](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-sifa.svg)
 
-Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the decentralized web.
+Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the open web.
 
 **Status:** Alpha (P1 MVP complete)
-**License:** MIT (lexicons)
+**License:** MIT (SDK, lexicons)
 
 | Repository | Description | CI | Updated |
 |------------|-------------|----|---------|
+| [sifa-sdk](https://github.com/singi-labs/sifa-sdk) | Public TypeScript client for the Sifa AppView (on npm) | [![CI](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-sdk?label=updated) |
 | [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) | [![Validate](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml/badge.svg)](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-lexicons?label=updated) |
+| [sifa-docs](https://github.com/singi-labs/sifa-docs) | Documentation site (Fumadocs) | [![CI](https://github.com/singi-labs/sifa-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-docs/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-docs?label=updated) |
 
-[sifa.id](https://sifa.id)
+[sifa.id](https://sifa.id) | [Documentation](https://docs.sifa.id)
 
 ---
 
@@ -70,6 +72,8 @@ Contributions are welcome. See [CONTRIBUTING.md](https://github.com/singi-labs/.
 
 <!-- CONTRIBUTORS:START -->
 <a href="https://github.com/gxjansen"><img src="https://avatars.githubusercontent.com/u/487722?v=4&s=80" width="80" alt="@gxjansen" /></a>
+<a href="https://github.com/StevenLangbroek"><img src="https://avatars.githubusercontent.com/u/296796?v=4&s=80" width="80" alt="@StevenLangbroek" /></a>
+<a href="https://github.com/nmokkenstorm"><img src="https://avatars.githubusercontent.com/u/33529698?v=4&s=80" width="80" alt="@nmokkenstorm" /></a>
 <!-- CONTRIBUTORS:END -->
 
 ---
