@@ -11,8 +11,8 @@ Singi Labs context — safe to use anywhere.
 
 ## Project
 
-You are contributing to a **Singi Labs** repo — open foundations for networked apps
-on the AT Protocol. Products: **Barazo** (federated forum) and **Sifa**
+You are contributing to a **Singi Labs** repo — open foundations for your online life
+on AT Protocol. Products: **Barazo** (federated forum) and **Sifa**
 (professional identity). The repo's own `README.md` / `AGENTS.md` has the exact
 stack, package manager, and setup. General shape: TypeScript (strict), Node current
 LTS, npm or pnpm per repo, PostgreSQL + Drizzle and Valkey on the backends, Next.js

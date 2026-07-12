@@ -1,6 +1,6 @@
 ![Singi Labs](https://raw.githubusercontent.com/singi-labs/.github/main/assets/banner-singi.svg)
 
-**Open source foundations for networked apps.**
+**Open source foundations for the parts of your online life you shouldn't have to rent.**
 
 We build decentralized software on the [AT Protocol](https://atproto.com). Portable identity, user-owned data, no ads.
 
