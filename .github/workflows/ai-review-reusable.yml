@@ -14,6 +14,10 @@ on:
         description: "Prompt set: backend | frontend"
         type: string
         default: backend
+      runner:
+        description: "Runner label(s) to execute on. Defaults to GitHub-hosted; sifa callers pass a self-hosted label to avoid billed minutes."
+        type: string
+        default: ubuntu-latest
     secrets:
       OPENROUTER_API_KEY:
         required: true
@@ -29,7 +33,7 @@ jobs:
       (github.event.action != 'labeled' ||
        github.event.label.name == 'deep-review' ||
        github.event.label.name == 're-review') }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner }}
     permissions:
       contents: read
       pull-requests: write
