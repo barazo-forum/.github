@@ -16,12 +16,14 @@ We build in the open on [AT Protocol](https://atproto.com). Portable identity, u
 Professional identity and career network on the AT Protocol. Portable profiles, verifiable track record from real community contributions, no vendor lock-in. The LinkedIn alternative for the open web.
 
 **Status:** Alpha (P1 MVP complete)
-**License:** MIT (SDK, lexicons)
+**License:** MIT (SDK, lexicons, page renderer, page)
 
 | Repository | Description | CI | Updated |
 |------------|-------------|----|---------|
 | [sifa-sdk](https://github.com/singi-labs/sifa-sdk) | Public TypeScript client for the Sifa AppView (on npm) | [![CI](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/singi-labs/sifa-sdk/actions/workflows/ci.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-sdk?label=updated) |
 | [sifa-lexicons](https://github.com/singi-labs/sifa-lexicons) | AT Protocol professional profile schemas (MIT) | [![Validate](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml/badge.svg)](https://github.com/singi-labs/sifa-lexicons/actions/workflows/validate.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-lexicons?label=updated) |
+| [sifa-page-renderer](https://github.com/singi-labs/sifa-page-renderer) | Pure HTML renderer for academicpages-style personal sites, driven by Sifa profile data (on npm) | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-page-renderer?label=updated) |
+| [sifa-page](https://github.com/singi-labs/sifa-page) | Self-hostable static-site scaffold for a personal academic site, driven by your Sifa profile | [![Deploy demo site](https://github.com/singi-labs/sifa-page/actions/workflows/deploy.yml/badge.svg)](https://github.com/singi-labs/sifa-page/actions/workflows/deploy.yml) | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-page?label=updated) |
 | [sifa-docs](https://github.com/singi-labs/sifa-docs) | Documentation site (Fumadocs) | | ![Updated](https://img.shields.io/github/last-commit/singi-labs/sifa-docs?label=updated) |
 
 [sifa.id](https://sifa.id) | [Documentation](https://docs.sifa.id)
