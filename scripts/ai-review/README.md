@@ -39,14 +39,18 @@ the reusable workflow's "Select prompts" step.
    (synchronize) / ready**, plus the `deep-review` / `re-review` labels. It
    re-reviews on each push so a flagged PR can recover after fixes (required for
    a blocking gate). Concurrency cancels superseded runs so you don't pay twice.
-2. It **scopes** the PR — skips drafts, bot authors, and trivial-only PRs
+2. A **gate** job handles label events: a label that is not `deep-review` /
+   `re-review` spends no review, unless the head commit has no `AI Review`
+   status yet — then it reviews anyway, because a label event cancels the
+   in-flight run for that commit and nothing else would ever report on it.
+3. It **scopes** the PR — skips drafts, bot authors, and trivial-only PRs
    (docs, `*.md`, `.github/`, lockfiles, snapshots).
-3. It picks a **mode**: `single` (one general pass) by default, or `dual`
+4. It picks a **mode**: `single` (one general pass) by default, or `dual`
    (general + adversarial) when the PR has the `deep-review` label or a large
    diff (>800 lines).
-4. **`review.mjs`** sends the diff + PR context + project standards to OpenRouter,
+5. **`review.mjs`** sends the diff + PR context + project standards to OpenRouter,
    gets structured JSON findings, and renders a Markdown report.
-5. The workflow **upserts one PR comment** (updated in place on re-runs) and
+6. The workflow **upserts one PR comment** (updated in place on re-runs) and
    sets the **blocking** `AI Review` status: `failure` on `request_changes`
    (critical/major), `success` otherwise. Skip/bot/error paths always post
    `success` so the required check never jams (fails open on reviewer error).

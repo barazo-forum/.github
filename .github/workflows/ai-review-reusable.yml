@@ -5,7 +5,8 @@ name: AI PR Review (reusable)
 #
 # Posts a comment + a BLOCKING "AI Review" status (fails on request_changes).
 # Always posts the status (skip/bot/error -> success) so a required check never
-# jams. Fails OPEN on reviewer/infra error. See scripts/ai-review/README.md.
+# jams: nothing may skip out of the run without leaving the head commit a
+# status. Fails OPEN on reviewer/infra error. See scripts/ai-review/README.md.
 
 on:
   workflow_call:
@@ -27,12 +28,51 @@ env:
   ADVERSARIAL_MODEL: z-ai/glm-5.2
 
 jobs:
+  # Label events only. A label that is not a review request must not spend a
+  # review, but it must not leave the commit without an "AI Review" status
+  # either: this job used to be expressed as a job-level `if`, and a skipped job
+  # posts nothing, so the required check jammed forever with nothing to re-run.
+  # Dependabot hit this every time -- it labels its own PR, and that label event
+  # cancels the in-flight review for the same SHA via the caller's concurrency
+  # group, leaving a commit no review would ever report on again.
+  gate:
+    if: github.event.action == 'labeled'
+    runs-on: ${{ inputs.runner }}
+    permissions:
+      contents: read
+      statuses: read
+    outputs:
+      stop: ${{ steps.check.outputs.stop }}
+    steps:
+      - name: Decide whether this label needs a review
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+          LABEL: ${{ github.event.label.name }}
+        run: |
+          set -euo pipefail
+          case "$LABEL" in
+            deep-review|re-review)
+              echo "Label '$LABEL' asks for a fresh review."; exit 0;;
+          esac
+          existing=$(gh api "repos/$REPO/commits/$SHA/status" \
+            --jq '.statuses[] | select(.context == "AI Review") | .state' | head -1)
+          if [ -n "${existing:-}" ]; then
+            echo "stop=true" >> "$GITHUB_OUTPUT"
+            echo "Label '$LABEL' is not a review request and $SHA already has an AI Review status ($existing). Nothing to do."
+          else
+            echo "Label '$LABEL' is not a review request, but $SHA has no AI Review status yet. Reviewing so the check can resolve."
+          fi
+
   review:
+    needs: gate
+    # `!cancelled()` rather than `success()`: gate is skipped on every
+    # non-label event, and a skipped dependency must not skip the review.
     if: >-
-      ${{ github.event.pull_request.draft == false &&
-      (github.event.action != 'labeled' ||
-       github.event.label.name == 'deep-review' ||
-       github.event.label.name == 're-review') }}
+      ${{ !cancelled() && github.event.pull_request.draft == false &&
+      needs.gate.outputs.stop != 'true' }}
     runs-on: ${{ inputs.runner }}
     permissions:
       contents: read
